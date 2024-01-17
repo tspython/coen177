@@ -1,0 +1,8 @@
+- compiling the example problem is fine, but must supply input when running executable ./lab2.out 1 (for example)
+  - the reason being because the program requires input via n = atoi(argv[1])
+
+// ANSWER TO STEP 4 //////////////////
+
+- the 500 goes quicker than the 5000
+
+//////////////////////////////////////
