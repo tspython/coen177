@@ -7,14 +7,12 @@
 */
 void newProcess(int, int);
 
-
 int main() {
     newProcess(0, 7); // (2^3) - 1 = 7 (we are including parent process)
     return 0;
 }
 
 void newProcess(int pNum, int tP) {
-
     if(pNum >= tP) return;
     printf("Process: %d\n", pNum);
 
