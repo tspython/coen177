@@ -1,4 +1,11 @@
 #!/bin/sh
+
+# Name: Tushar Shrivastav
+# Date: 1/12/2024
+# Title: Lab1 – task
+# Description: example
+
+
 echo Executing $0
 echo $(/bin/ls | wc -l) files
 wc -l $(/bin/ls)
@@ -10,7 +17,7 @@ echo "\$\$"=$$
 user=`whoami`
 numusers=`who | wc -l`
 echo "Hi $user! There are $numusers users logged on."
-if [ $user = "tspyt" ]
+if [ $user = "tshrivastav" ]
 then
         echo "Now you can proceed!"
 else

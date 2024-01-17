@@ -1,5 +1,11 @@
+# Name: Tushar Shrivastav
+# Date: 1/12/2024
+# Title: Lab1 – circle
+# Description: adding calculation of circle area to eadding calculation of circle area to eadding calculation of circle area to eadding calculation of circle area to eadding calculation of circle area to eadding calculation of circle area to eadding calculation of circle area to eadding calculation of circle area to eadding calculation of circle area to example/sh
+
 #!/bin/sh
-PI=3.14159
+
+#PI=3.14159
 
 echo Executing $0
 echo $(/bin/ls | wc -l) files
@@ -12,12 +18,12 @@ echo "\$\$"=$$
 user=$(whoami)
 numusers=$(who | wc -l)
 echo "Hi $user! There are $numusers users logged on."
-if [ $user = "salagtash" ]
+if [ $user = "tshrivastav" ]
 then
     echo "Now you can proceed!"
 else
     echo "Check who logged in!"
-    # exit 1
+    exit 1
 fi
 
 response="Yes"

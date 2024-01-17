@@ -1,2 +1,5 @@
 - Had to fix the user name in the sh file to match the output of the UNIX command "whoami" inorder to proceed to the rectangle calculation.
+
 - No support for wrong inputs in the rectangle, like in C we can assert proper input from the user
+
+- finding area of circle and rectangle
