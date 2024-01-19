@@ -1,20 +1,18 @@
 #include <stdio.h>
 #include <unistd.h>
 
-/*
-** forks new processes until desired depth in process tree
-** limiting child processes to two each
-*/
 void newProcess(int, int);
 
 int main() {
-    newProcess(0, 7); // (2^3) - 1 = 7 (we are including parent process)
+    newProcess(0, 7);
     return 0;
 }
 
 void newProcess(int pNum, int tP) {
     if(pNum >= tP) return;
-    printf("Process: %d\n", pNum);
+    pid_t pid = getpid();
+    printf("Process: %d, PID: %d\n", pNum, pid);
+    fflush(stdout);
 
     int i;
     for(i = 0; i < 2; i++) {
@@ -23,4 +21,5 @@ void newProcess(int pNum, int tP) {
             break;
         }
     }
+    while(wait(NULL) > 0);
 }
