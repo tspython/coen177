@@ -1,25 +1,40 @@
+/*
+# Name: Tushar Shrivastav
+# Date: 1/19/2024
+# Title: Lab2 - Step 5
+# Description: use generative logic to create 7 processes including
+# parent where each parent can only have 2 or 0 children
+*/
+
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
-void newProcess(int, int);
+int main(int argc, char *argv[]) {
 
-int main() {
-    newProcess(0, 7);
-    return 0;
-}
+    printf("parent pid: %d\n", getpid());
 
-void newProcess(int pNum, int tP) {
-    if(pNum >= tP) return;
-    pid_t pid = getpid();
-    printf("Process: %d, PID: %d\n", pNum, pid);
-    fflush(stdout);
-
-    int i;
-    for(i = 0; i < 2; i++) {
-        if(fork() == 0) {
-            newProcess(pNum * 2 + i + 1, tP);
-            break;
+    if(fork() == 0){
+        printf("child1 pid: %d, parent: %d\n", getpid(), getppid());
+        for(int i = 0; i < 2; i++){
+            if(fork() == 0){
+                printf("grandchild from child1: %d, parent: %d\n", getpid(), getppid());
+                exit(0);
+            }
+            while(wait(NULL) >0);
         }
+        exit(0);
     }
-    while(wait(NULL) > 0);
+
+    if(fork() == 0){
+        printf("child2 pid: %d, parent: %d\n", getpid(), getppid());
+        for(int i = 0; i < 2; i++){
+            if(fork() == 0){
+                printf("grandchild from child2: %d, parent: %d\n", getpid(), getppid());
+                exit(0);
+            }
+        }
+        while(wait(NULL) > 0);
+    }
+    return 0;
 }

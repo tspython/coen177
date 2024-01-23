@@ -1,26 +1,26 @@
-/*Sample C program for Lab assignment 1*/
+/*
+# Name: Tushar Shrivastav
+# Date: 1/19/2024
+# Title: Lab2 - Step 7
+# Description: modify example code to have the child process called execlp and execute
+# the UNIX list (ls) command
+*/
+
 #include <stdio.h>      /* printf, stderr */
 #include <sys/types.h>  /* pid_t */
 #include <unistd.h>     /* fork */
 #include <stdlib.h>     /* atoi */
 #include <errno.h>      /* errno */
-/* main function with command-line arguments to pass */
+
 int main(int argc, char *argv[]) {
     pid_t  pid;
-    int i, n = atoi(argv[1]); // n microseconds to input from keyboard for delay
     printf("\n Before forking.\n");
     pid = fork();
+
     if (pid == -1) {
         fprintf(stderr, "can't fork, error %d\n", errno);
     }
-    // Parent process
-    if (pid){
-        for(i = 0; i < 100; i++) {
-            printf("\t \t \t Parent Process %d \n", i);
-            usleep(n);
-        }
-    }
-    // Child process
+   // Child process
     else if(pid == 0)  {
         execlp("/bin/ls", "ls", NULL);
     }

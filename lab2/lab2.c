@@ -1,3 +1,10 @@
+/*
+# Name: Tushar Shrivastav
+# Date: 1/19/2024
+# Title: Lab2 - Example
+# Description: example program: observations in observations.txt
+*/
+
 /*Sample C program for Lab assignment 1*/
 #include <stdio.h>      /* printf, stderr */
 #include <sys/types.h>  /* pid_t */

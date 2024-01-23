@@ -1,3 +1,8 @@
+# Name: Tushar Shrivastav
+# Date: 1/19/2024
+# Title: Lab2 - Step 1-4
+# Description: obeservations for step 1-4 of lab
+
 - compiling the example problem is fine, but must supply input when running executable ./lab2.out 1 (for example)
   - the reason being because the program requires input via n = atoi(argv[1])
 
@@ -6,6 +11,3 @@
 - the 500 goes quicker than the 5000
 
 //////////////////////////////////////
-
-Explanation for Step 5
-_______________________
