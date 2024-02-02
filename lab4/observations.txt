@@ -1,0 +1,9 @@
+Step 1 Observations
+___________________
+
+I get the same results overall, but the thread ID is different every time.
+Often times one or two threads will return their message while other threads are returning.
+
+
+Step 2 Observations
+___________________
