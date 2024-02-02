@@ -1,0 +1,8 @@
+Step 1 Observations:
+     -
+Step 2 Observations
+
+
+step 6 observations
+    - 10 threads created
+    i = {2,5,6,7,4,9}
