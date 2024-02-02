@@ -3,7 +3,7 @@
 #include <pthread.h>
 #include <time.h> //srand
 
-#define num 10
+#define num 1024
 
 #define N num
 #define L num
