@@ -46,6 +46,18 @@ int main() {
     for(int i = 0; i < NTHREADS; i++)
         pthread_join(threads[i], NULL);
 
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < L; j++)
+            printf("%.2f ", matrixA[i][j]);
+        printf("\n");
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < L; j++)
+            printf("%.2f ", matrixB[i][j]);
+        printf("\n");
+    }
+
     // Display Matrix C = A * B
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < L; j++)

@@ -1,9 +1,33 @@
 Step 1 Observations
 ___________________
 
-I get the same results overall, but the thread ID is different every time.
-Often times one or two threads will return their message while other threads are returning.
+Question 1:
+
+Explain what happens when you run the threadHello.c program? Do you get the same result if you run it
+multiple times? What if you are also running some other demanding processes (e.g., compiling a big
+program, playing a Flash game on a website, or watching streaming video) when you run this program?
+_
+No I don't get the same results because the threads can be scheduled differently, and the argument i is a shared-state, so it can be repeated.
+
+If I were to run this while also running other demanding processes this could effect the scheduling of the threads, meaning that there might be some delay in execution of the threads.
+_
+
+The function go() has the parameter arg passed a local variable. Are these variables per-thread or
+shared state? Where does the compiler store these variables’ states?
+
+These variables are shared state, and the compiler stores these variables' states in the stack. (b/c it is a pointer)
+_
+
+The main() has local variable i. Is this variable per-thread or shared state? Where does the compiler store this variable?
+
+This variable is shared state, and it is stored on the stack.
+_
 
 
 Step 2 Observations
 ___________________
+
+Delete the second for loop in threadHello.c program so that the main routine simply creates NTHREADS
+threads and then prints “Main thread done.” What are the possible outputs of the program now. Explain.
+
+the main thread may now exit before all the other threads that are created before exiting, meaning there is a chance that we will not hear back from every thread.
