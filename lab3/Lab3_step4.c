@@ -1,8 +1,7 @@
-/**************************
-*	pipe()
-**************************/
-
-// Write a C program that implements the shell command: cat /etc/passwd | grep root
+/* # Name: Tushar Shrivastav  */
+/* # Date: Friday 2:15  */
+/* # Title: Lab3 - Step 4 */
+/* # Description: Write a C program that implements the shell command: cat /etc/passwd | grep root */
 
 #include <sys/types.h>
 #include <sys/ipc.h>

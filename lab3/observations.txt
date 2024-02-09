@@ -1,8 +1,12 @@
 Step 1 Observations:
-     -
-Step 2 Observations
-
+     - executes more command for the ls using pipe
+Step 2 Observations:
+     - program shows reading and writing on upstream/downstream pipe fds[1] vs fds[0]
 
 step 6 observations
     - 10 threads created
     i = {2,5,6,7,4,9}
+    problem: is that i is a shared-state memory instead of
+step 7:
+     fix is to add an array thread_args that will allocate an i for every thread, so that they aren't all using shared-state memory
+     Check Lab3_3.c for fixed code.

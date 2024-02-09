@@ -1,4 +1,10 @@
-/**************************
+/* # Name: Tushar Shrivastav  */
+/* # Date: Friday 2:15  */
+/* # Title: Lab3 - Step 6 & 7 */
+/* # Description: Find error in the given code and fix it */
+
+
+ /**************************
 *       COEN177: Threads  *
 **************************/
 #include <stdio.h>
@@ -13,7 +19,7 @@ int main() {
     int i;
     for (i = 0; i < NTHREADS; i++) {
         thread_args[i] = i;
-        pthread_create(&threads[i], NULL, go, &i);
+        pthread_create(&threads[i], NULL, go, &thread_args[i]);
        // usleep(3000);
     }
     for (i = 0; i < NTHREADS; i++) {

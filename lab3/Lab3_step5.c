@@ -1,3 +1,8 @@
+/* # Name: Tushar Shrivastav  */
+/* # Date: Friday 2:15  */
+/* # Title: Lab3 - Step 5 */
+/* # Description: Below... */
+
 /* In Computer Science, the producer–consumer problem is a classic multi- process synchronization */
 /* example. The producer and the consumer share a common fixed-size buffer. The producer puts */
 /* messages to the buffer while the consumer removes messages from the buffer. Pipes provide a perfect */
@@ -14,7 +19,7 @@
 #define BUFFER_SIZE 100
 
 void producer(int write_fd) {
-    char buff[BUFFER_SIZE] = "Message from producer I am tushar Shrivastav of california"; // Initialize buffer with some data
+    char buff[BUFFER_SIZE] = "Hello World - From Santa Clara University, CA"; // Initialize buffer with some data
     printf("Producer produced: %s\n", buff);
     write(write_fd, buff, BUFFER_SIZE);
     usleep(10);

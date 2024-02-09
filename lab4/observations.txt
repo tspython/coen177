@@ -1,3 +1,8 @@
+# Name: Tushar SHrivastav
+# Date: Friday 2:15
+# Title: Lab 4 Step 1 & 2 Observations/Questions
+# Description: This file is obsevations for step 1 and 2, questions are included with answers.
+
 Step 1 Observations
 ___________________
 

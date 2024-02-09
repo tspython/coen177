@@ -1,3 +1,8 @@
+/* # Name: Tushar Shrivastav */
+/* # Date: Friday 2:15 */
+/* # Title: Lab4 - Step 3 */
+/* # Description: This program computes matrix multiplication with multithreading support. */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <pthread.h>
