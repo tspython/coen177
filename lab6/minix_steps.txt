@@ -1,0 +1,63 @@
+ # Name: Tushar Shrivastav
+ # Date: Friday 2:15
+ # Title: Lab6
+ # Description: Below is a description of how I would tell someone to modify the boot message in a fresh minix installation on a VM at SCU if they were taking the OS Lab with me and needed help.
+
+For this lab we needed to setup the Minix Operating system in a virtual machine on our ECC Machines.
+
+To do so you can simply login to your ECC account on the lab computer, or used whatever method you prefer for accessing the machine.
+
+Next open a terminal window, we need to install vmware, and get our minix image.
+
+Here are the commands and short explanation:
+
+setup vmware - preparing vmware for your computer
+minix-get-image - prepare a minix image for your use in vmware
+vmware & - boot up vmware
+
+When you complete the last command you should have a vmware session running, and there should be an option on the left-hand-side to run minix.
+
+If doesn't appear use Open a Virtual machine -> "vm images" subfolder -> "minix3" subfolder -> minix3.vmx
+
+When you launch minix you will have to slowly go through the boot up screen, and then you are prompted with the username and password entries. For username you can simply enter root, and the password you can just press enter without entering any further characters.
+
+This will log you into the minix vm with root access, however we should set a password for our machine.
+
+Type passwd into the prompt, and set a password for the root account.
+
+For this lab you may choose to proceed to work with vi text editor on minix (if you are very confident), however it is better to use FTP to transfer files to our local PC, so we can edit them and push them back to MINIX. This is so if we corrupt the OS with our changes it won't cause any issues.
+
+To connect to ftp we need to run the following commands.
+
+First run: tcpd ftp /usr/bin/in.ftpd &
+
+Now we have launched the ftp daemon, and we can check our ip address with ifconfig command too.
+
+Now you need to enter your local terminal byu pressing CTRL + ALT to get out of the VM.
+
+Use the ipaddress you got from inputting ifconfig after entering the ftp command like this: ftp "ip address".
+
+Now you will be in FTP, it will take some time to connect, but when it does it will prompt you to enter your username. Please enter root, and then the password you setup for the root account.
+
+
+Sounds good! Now we are using FTP to enter our Minix VM.
+
+Let us now do what the goal of this lab, to edit the boot message that comes in minix.
+
+The src code for Minix OS is located in the /usr/src directory, we can use grep to find particular strings in our file system. If you clearly looked at the boot message when we first booted up MINIX you will notice that there were some key words like "Amsterdam" in it. We can use this to our advantage to find the exact file we want to edit for modifying the boot message.
+
+Run: grep Amsterdam /usr/src/**/*
+
+Through this command we're telling the grep utility to search for the pattern Amsterdam in the directory /usr/src and using the ** and * we are letting grep know that we want to search recursively through all files * within all subdirectories ** of /usr/src.
+
+If you did this right you should see that there is a file called main.c in /usr/src/kernel folder that we need to modify to change the boot direcotry.
+
+You should use FTP to get this file using ftp get main.c, then edit the boot message, and put this file back using ftp put main.c.
+
+Now we need to change directory back to /usr/src/ probably if you are in the kernel direcotry use cd ..
+
+Now here we can re-build the kernel using make world.
+
+Once you run make world, type reboot, and your boot message should have changed!
+
+Congrats!
