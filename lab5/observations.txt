@@ -1,0 +1,10 @@
+//  # Name : Tushar Shrivastav
+//  # Date : 2/9/2024
+//  # Title: Lab1: Step 1
+//  # Description: Observations for Step 1
+
+Step 1: threadSync.c is different than threadHello.c program because all the threads return. Why?
+
+threadSync.c shows how thread synchronization works using semaphores. They control access to the critical section, while threadHello.c just shows how to create and join threads.
+
+thus the i variable that was causing issues in the original implementation of threadHello.c will not cause the same issue here.
