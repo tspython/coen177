@@ -37,12 +37,14 @@ int main(int argc, char *argv[]){
         }
         if (foundInCache == false){
             totalFaults++;
+            printf("Page fault for page: %d, inserting at index: %d, causing total faults to increase to: %d\n", page_num, placeInArray, totalFaults);
+
             cache[placeInArray].pageno = page_num;
             placeInArray = (placeInArray + 1) % CACHE_SIZE;
         }
 
     }
 
-    printf("%d Total Page Faults", totalFaults);
+    //printf("%d Total Page Faults\n", totalFaults);
     return 0;
 }
