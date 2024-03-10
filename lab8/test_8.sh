@@ -1,3 +1,8 @@
+# Name: Tushar Shrivastav
+# Date: Friday 2:15
+# Title: Lab8
+# Description: Bash Script used to test code
+
 #!/bin/bash
 make;
 echo "----------FIFO----------"

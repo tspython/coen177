@@ -1,3 +1,10 @@
+/* 
+# Name: Tushar Shrivastav
+ # Date: Friday 2:15
+ # Title: Lab8
+ # Description: Implmentation of Fifo Algorithm
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -37,7 +44,9 @@ int main(int argc, char *argv[]){
         }
         if (foundInCache == false){
             totalFaults++;
-            printf("Page fault for page: %d, inserting at index: %d, causing total faults to increase to: %d\n", page_num, placeInArray, totalFaults);
+            printf("%d\n",page_num); 
+
+           //printf("Page fault for page: %d, inserting at index: %d, causing total faults to increase to: %d\n", page_num, placeInArray, totalFaults);
 
             cache[placeInArray].pageno = page_num;
             placeInArray = (placeInArray + 1) % CACHE_SIZE;
@@ -45,6 +54,6 @@ int main(int argc, char *argv[]){
 
     }
 
-    //printf("%d Total Page Faults\n", totalFaults);
+   // printf("%d Total Page Faults\n", totalFaults);
     return 0;
 }

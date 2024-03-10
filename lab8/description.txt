@@ -1,0 +1,74 @@
+ # Name: Tushar Shrivastav
+ # Date: Friday 2:15
+ # Title: Lab8
+ # Description: Below is a description of each page replacement algorithm I implemented for this lab and how each works. I have also included the required output as requested. You can find the table and the graph in the attatchments as well.
+
+FIFO Description:
+	Our program is a very simple implementation of the FIFO Page Replacement Algorithm. It takes an argument from the command line to determine the cache size, initializes an array to represent the cache, and then continuously reads input from stdin. Upon encountering a page not already in the cache, it increments a counter for total page faults, inserts the page into the cache using FIFO policy, and updates the position for future insertions. Finally, it prints the total number of page faults incurred during the simulation.
+LRU Description
+	This program simply implements a cache just like FIFO but we use the Least Recently Used (LRU) Page Replacement Algorithm. It initializes an array of structures to represent the cache, with each structure containing a page number and a counter to track the time when the page was last accessed. Upon encountering a page not already in the cache, it identifies the least recently used page using the counter values, replaces it with the new page, and updates its counter. The program then continues to simulate page accesses until there is no more input, counting and printing the total number of page faults incurred during the simulation.
+Second Chance Description
+	This program simply implements the second cache page replacement algorithm where we also use a cache. It initializes an array of structures to represent the cache, with each structure containing a page number and a boolean flag indicating whether the page has been referenced. Upon encountering a page not already in the cache, it selects the first page without a reference bit set (if any) using a circular scanning approach, replaces it with the new page, and updates the reference bit. The program continues simulating page accesses until there is no more input, counting and printing the total number of page faults incurred during the simulation.
+
+Output of Test Input.txt && accesses.txt
+
+----------FIFO----------
+3
+6
+----------End FIFO----------
+
+----------LRU----------
+3
+6
+3
+----------End LRU----------
+
+----------Second Chance----------
+3
+6
+----------End Second Chance----------
+FIFO 10K Test with cache size = 10, 50, 100, 250, 500
+    9916 
+    9515
+    9018
+    7534
+    5130
+
+LRU 10K Test with cache size = 10, 50, 100, 250, 500
+    9915
+    9510
+    9029
+    7532
+    5207
+
+Second Chance 10K Test with cache size = 10, 50, 100, 250, 500
+    9915
+    9510
+    9022
+    7526
+    5178
+
+For FIFO:
+
+Cache size = 10, miss-rate = 9916 / 10000 = 0.9916
+Cache size = 50, miss-rate = 9515 / 10000 = 0.9515
+Cache size = 100, miss-rate = 9018 / 10000 = 0.9018
+Cache size = 250, miss-rate = 7534 / 10000 = 0.7534
+Cache size = 500, miss-rate = 5130 / 10000 = 0.513
+
+For LRU:
+
+Cache size = 10, miss-rate = 9915 / 10000 = 0.9915
+Cache size = 50, miss-rate = 9510 / 10000 = 0.951
+Cache size = 100, miss-rate = 9029 / 10000 = 0.9029
+Cache size = 250, miss-rate = 7532 / 10000 = 0.7532
+Cache size = 500, miss-rate = 5207 / 10000 = 0.5207
+
+For Second Chance:
+
+Cache size = 10, miss-rate = 9915 / 10000 = 0.9915
+Cache size = 50, miss-rate = 9510 / 10000 = 0.951
+Cache size = 100, miss-rate = 9022 / 10000 = 0.9022
+Cache size = 250, miss-rate = 7526 / 10000 = 0.7526
+Cache size = 500, miss-rate = 5178 / 10000 = 0.5178
+

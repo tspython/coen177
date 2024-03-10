@@ -1,0 +1,28 @@
+ # Name: Tushar Shrivastav
+ # Date: Friday 2:15
+ # Title: Lab7
+ # Description: Below is a description of how I would tell someone to modify the process scheduler according to the way the lab 7 document describes it.
+
+For this lab you should already be familiar with starting the Minix VM and using FTP.
+
+setup vmware again 
+
+setup vmware
+vmware &
+
+Now boot into the minix VM.
+
+Next you want to cd to our /usr/src directory again as this is where we are going to build our kernel from again.
+
+You want to grep for pick_proc as hinted by the lab.
+
+You should now see that there is a file in the kernel directory called proc.c, you want to find the function pick_proc, and add a simple if statement in the for loop as following:
+
+if( q > 2 && rand() > (n)) where n is any number
+
+this will make it so that we meet the requirements of the lab. Make sure to not make any mistakes as this will cause the VM to crash and you will have to go through the setup processagain for FTP etc.
+
+now save this file and put it back using put command in ftp, and cd back to the usr/src/ directory and run make world.
+
+
+Now you have modified the process scheduler according to how the lab asks you to.

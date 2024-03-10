@@ -1,3 +1,10 @@
+/* 
+ # Name: Tushar Shrivastav
+ # Date: Friday 2:15
+ # Title: Lab8
+ # Description: Implmentation to generate testInput.txt
+*/
+
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {

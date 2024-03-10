@@ -1,3 +1,9 @@
+/* 
+# Name: Tushar Shrivastav
+ # Date: Friday 2:15
+ # Title: Lab8
+ # Description: Implmentation of LRU Algorithm
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -34,7 +40,7 @@ int main(int argc, char *argv[]) {
         }
         if (foundInCache == false) {
             totalFaults++;
-                        printf("%d\n",page_num); 
+            printf("%d\n",page_num); 
 
             int lruIndex = 0;
             for (i = 1; i < CACHE_SIZE; i++) {
@@ -42,7 +48,7 @@ int main(int argc, char *argv[]) {
                     lruIndex = i;                
                 }
             }
-            printf(stderr,"Page fault for page: %d. Replacing LRU page in index: %d with last used time: %d. Total page faults so far: %d\n", page_num, lruIndex, time, totalFaults);
+           // printf(stderr,"Page fault for page: %d. Replacing LRU page in index: %d with last used time: %d. Total page faults so far: %d\n", page_num, lruIndex, time, totalFaults);
             cache[lruIndex].pageno = page_num; 
             cache[lruIndex].counter = time++;         
         }

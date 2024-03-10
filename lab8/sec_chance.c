@@ -1,3 +1,10 @@
+/* 
+# Name: Tushar Shrivastav
+ # Date: Friday 2:15
+ # Title: Lab8
+ # Description: Implmentation of Second Chance Algorithm
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
